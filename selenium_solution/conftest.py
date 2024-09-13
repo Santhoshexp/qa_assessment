@@ -1,4 +1,4 @@
-"""Module"""
+"""Module containing the configuration for the pytest"""
 
 import pytest
 from selenium import webdriver
@@ -13,15 +13,9 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 @pytest.fixture()
 def setup(request,get_arguments):
-    """Method """
+    """Method to define the process during setup  and tear down"""
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
-    # options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
-    # AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36")
-    # options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    # options.add_experimental_option('useAutomationExtension', False)
-    # options.add_argument('--disable-blink-features=AutomationControlled')
-    # options.add_argument("--log-level=1")
     browser = get_arguments
     if browser == 'chrome':
         driver = webdriver.Chrome(service= chromeservice(ChromeDriverManager().install()),options=options)
@@ -36,12 +30,12 @@ def setup(request,get_arguments):
     driver.quit()
 
 def pytest_addoption(parser):
-    """Method"""
+    """Method to add additoinal options to pytest"""
     parser.addoption("--browser",action="store",default="chrome")
 
 @pytest.fixture(scope="session")
 def get_arguments(request):
-    """Method"""
+    """Method to retrive the arguments passed by the user"""
     browser_ = request.config.getoption("--browser")
     return browser_
 
