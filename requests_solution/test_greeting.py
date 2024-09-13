@@ -8,7 +8,6 @@ def test_response():
     """Method to validate the response code"""
     response = requests.get(URL,timeout=60)
     assert response.status_code == 200
-    assert "<h1>Hello from the Backend!</h1>" in response.text
 
 def test_content():
     """Method to validate the response content"""
