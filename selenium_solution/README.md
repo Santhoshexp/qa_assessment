@@ -1,4 +1,4 @@
-# Selenium-Based Web Page Content Testing
+# Selenium-Based Solution
 
 This repository contains a Python script for automated testing of web page content using Selenium. The script verifies that a specific text is present on a web page.
 
