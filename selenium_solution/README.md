@@ -21,5 +21,5 @@ This repository contains a Python script for automated testing of web page conte
 
 ## Note
 
-Replace the url of the frontend service in the conftest file at line 30
+Replace the url of the frontend service in the conftest file at line 26
    
