@@ -10,7 +10,7 @@ This repository contains a Python script for automated testing of web page conte
 
 ## Steps to execute
 
-- pytest --browser <browser names> .
+- pytest --browser <browser_names> .
 - Brower names - chrome (default) , edge , firefox
 - Sample command - pytest --browser edge test_problem1.py
 
